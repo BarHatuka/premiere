@@ -54,7 +54,7 @@ test('When I open the app, I see "טוענים את הסדרות…" and then a 
   expect(await wallItems()).toHaveLength(6)
 })
 
-test('When I click "Person of Interest", I see the address /shows/2, its rating 8.8, the line "שודרה בין 2011 ל-2016 ב-CBS" and its cast — and I see the same after refreshing the page', async () => {
+test('When I click "Person of Interest", I see the address /shows/2, its rating 8.8, the line "שודרה בין 2011 ל-2016 ב-CBS" and its cast, and I see the same after refreshing the page', async () => {
   const user = userEvent.setup()
   const { unmount } = renderAt('/')
 
