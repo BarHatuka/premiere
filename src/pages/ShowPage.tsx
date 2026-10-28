@@ -25,6 +25,7 @@ export default function ShowPage() {
 
   return (
     <>
+      <title>{`${show.name} | פרמיירה`}</title>
       <BackLink />
       {/* key: לסדרה אחרת יש רכיב חדש, כך שמצב הפוסטר של הקודמת לא עובר אליה */}
       <ShowDetail key={show.id} show={show} />

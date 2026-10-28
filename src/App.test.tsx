@@ -66,6 +66,12 @@ test('a search with no results explains why, and "הצגת כל הסדרות" br
   expect(await wallItems()).toHaveLength(6)
 })
 
+test('the browser tab shows the name of the show', async () => {
+  renderAt('/shows/2')
+  await screen.findByRole('heading', { level: 1, name: 'Person of Interest' })
+  expect(document.title).toBe('Person of Interest | פרמיירה')
+})
+
 test('a show can be removed from "הרשימה שלי", and an empty list explains how to add one', async () => {
   const user = userEvent.setup()
   renderAt('/shows/2')

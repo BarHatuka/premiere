@@ -8,6 +8,7 @@ export default function MyListPage() {
 
   return (
     <section className="my-list" aria-labelledby="my-list-title">
+      <title>הרשימה שלי | פרמיירה</title>
       <h1 id="my-list-title" className="page-title">
         הרשימה שלי
       </h1>

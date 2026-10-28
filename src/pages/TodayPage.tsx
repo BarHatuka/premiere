@@ -19,6 +19,7 @@ export default function TodayPage() {
 
   return (
     <section className="today" aria-labelledby="today-title">
+      <title>היום בטלוויזיה | פרמיירה</title>
       <h1 id="today-title" className="page-title">
         היום בטלוויזיה
       </h1>
@@ -30,7 +31,7 @@ export default function TodayPage() {
       {groups.length === 0 && <p>היום אין שידורים בלוח של TVmaze.</p>}
 
       {groups.map((group) => (
-        <section key={group.hour} className="today__hour" aria-label={group.hour || 'בלי שעה קבועה'}>
+        <section key={group.hour} className="today__hour">
           <h2 className="today__hour-title">{group.hour || 'בלי שעה קבועה'}</h2>
           <ul className="today__list">
             {group.entries.map((entry) => (

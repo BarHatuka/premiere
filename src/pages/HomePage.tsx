@@ -45,7 +45,11 @@ export default function HomePage() {
     visible.length === 1 ? `מוצגת סדרה אחת מתוך ${wall.length}` : `מוצגות ${visible.length} מתוך ${wall.length} סדרות`
 
   return (
-    <section className="home" aria-label="כל הסדרות">
+    <section className="home" aria-labelledby="home-title">
+      <h1 id="home-title" className="visually-hidden">
+        כל הסדרות
+      </h1>
+
       <div className="home__toolbar">
         <SearchBox value={query} onChange={(value) => updateParam('q', value)} />
         <GenreFilter

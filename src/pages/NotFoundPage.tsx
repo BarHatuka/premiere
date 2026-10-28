@@ -5,6 +5,7 @@ import './NotFoundPage.css'
 export default function NotFoundPage() {
   return (
     <section className="not-found">
+      <title>העמוד לא נמצא | פרמיירה</title>
       <span className="not-found__frame" aria-hidden="true" />
       <h1 className="page-title">העמוד הזה לא בתוכנית</h1>
       <p>אולי הקישור השתנה, ואולי הסדרה ירדה מהלוח.</p>
