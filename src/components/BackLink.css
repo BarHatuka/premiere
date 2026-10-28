@@ -1,0 +1,18 @@
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 24px;
+  padding: 6px 0;
+  font: inherit;
+  font-weight: 600;
+  color: var(--brass);
+  text-decoration: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.back-link:hover {
+  color: var(--ivory);
+}
