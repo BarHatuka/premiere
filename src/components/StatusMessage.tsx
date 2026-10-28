@@ -1,7 +1,5 @@
 import './StatusMessage.css'
 
-// שני המצבים שלפני שיש מידע: טוענים, או שגיאה עם כפתור לניסיון חוזר.
-// הטיפוס הוא "או-או": עם type="error" חייבים לתת גם onRetry, ועם "loading" אין צורך.
 type StatusMessageProps =
   | { type: 'loading'; text: string; posters?: boolean }
   | { type: 'error'; title: string; details: string; onRetry: () => void }
@@ -11,7 +9,7 @@ export default function StatusMessage(props: StatusMessageProps) {
     return (
       <div className="status status--loading" role="status">
         <p className="status__text">{props.text}</p>
-        {/* פוסטרים "ריקים" שמראים איפה הקיר יופיע. רשימה קבועה שלא משתנה, ולכן key לפי מיקום תקין כאן */}
+        {/* 12 פוסטרים ריקים שלא משתנים, ולכן key לפי המיקום תקין כאן */}
         {props.posters && (
           <ul className="status__skeleton" aria-hidden="true">
             {Array.from({ length: 12 }, (_, index) => (

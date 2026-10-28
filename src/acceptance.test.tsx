@@ -45,7 +45,7 @@ test('When I open the app, I see "טוענים את הסדרות…" and then a 
   const items = await wallItems()
   expect(items[0]).toHaveTextContent('Person of Interest') // 8.8
   expect(items[1]).toHaveTextContent('The Big Bang Theory') // 8.0
-  expect(items.at(-1)).toHaveTextContent('Death Note') // בלי דירוג — בסוף
+  expect(items.at(-1)).toHaveTextContent('Death Note') // בלי דירוג, ולכן אחרונה
 
   vi.mocked(fetch).mockRejectedValueOnce(new TypeError('Failed to fetch'))
   refresh(unmount, '/')

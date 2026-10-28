@@ -1,7 +1,5 @@
 import type { ReactNode } from 'react'
 
-// אייקונים קטנים ב-SVG, בצבע של הטקסט שסביבם (currentColor).
-// aria-hidden: הם רק קישוט. הטקסט שליד כל אייקון הוא מה שקורא המסך מקריא.
 const SHAPES = {
   search: (
     <>
@@ -22,7 +20,6 @@ const SHAPES = {
   star: <path d="m12 3.8 2.5 5.2 5.7.8-4.1 4 1 5.6L12 16.7l-5.1 2.7 1-5.6-4.1-4 5.7-.8z" />,
 } satisfies Record<string, ReactNode>
 
-// keyof typeof SHAPES: רק השמות שקיימים למעלה. <Icon name="serch" /> לא יעבור קומפילציה.
 export type IconName = keyof typeof SHAPES
 
 type IconProps = {

@@ -7,12 +7,10 @@ type MyListProviderProps = {
   children: ReactNode
 }
 
-// מחזיק את "הרשימה שלי" במקום אחד, ומעביר אותה לכל העמודים דרך Context.
 export default function MyListProvider({ children }: MyListProviderProps) {
-  // פונקציה (ולא קריאה לה): React מריץ אותה רק ברינדור הראשון, כדי לקרוא מ-localStorage פעם אחת.
+  // loadMyList בלי סוגריים: React קורא לה רק ברינדור הראשון.
   const [shows, setShows] = useState<Show[]>(loadMyList)
 
-  // בכל פעם שהרשימה משתנה — שומרים אותה בדפדפן.
   useEffect(() => {
     storeMyList(shows)
   }, [shows])

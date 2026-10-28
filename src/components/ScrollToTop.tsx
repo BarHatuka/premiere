@@ -1,8 +1,7 @@
 import { useEffect } from 'react'
 import { useLocation, useNavigationType } from 'react-router'
 
-// בלי זה, לחיצה על פוסטר בתחתית הקיר פותחת את עמוד הסדרה באמצע הגלילה.
-// במעבר לעמוד חדש גוללים לראש הדף. ב"אחורה" (POP) משאירים לדפדפן להחזיר את המקום שבו היינו.
+// במעבר לעמוד חדש גוללים לראש הדף. ב"אחורה" (POP) הדפדפן מחזיר לבד את המקום שבו היינו.
 export default function ScrollToTop() {
   const { pathname } = useLocation()
   const navigationType = useNavigationType()

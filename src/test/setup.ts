@@ -6,8 +6,7 @@ import { clearFetchCache } from '../hooks/useFetch'
 // ב-jsdom אין גלילה אמיתית. ScrollToTop קורא ל-scrollTo, אז מחליפים אותו בפונקציה ריקה.
 window.scrollTo = vi.fn()
 
-// אחרי כל בדיקה: מנקים את המסך, את הזיכרון של useFetch, את localStorage ואת ה-fetch המדומה,
-// כדי שבדיקה אחת לא תראה את מה שהקודמת השאירה.
+// כל בדיקה מתחילה נקייה: בלי מה שהבדיקה הקודמת השאירה במסך, ב-useFetch, ב-localStorage או ב-fetch
 afterEach(() => {
   cleanup()
   clearFetchCache()

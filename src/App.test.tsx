@@ -11,7 +11,6 @@ beforeEach(() => {
   vi.stubGlobal('fetch', fakeTvmaze(defaultAnswers))
 })
 
-// MemoryRouter: ראוטר שמחזיק את הכתובת בזיכרון במקום בשורת הכתובת, כך שבבדיקה אפשר להתחיל מכל כתובת.
 function renderAt(path: string) {
   return render(
     <MemoryRouter initialEntries={[path]}>

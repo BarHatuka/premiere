@@ -5,8 +5,6 @@ export type ShowFilters = {
   genre: string | null // null = כל הז'אנרים
 }
 
-// מחזיר רק את הסדרות שמתאימות לחיפוש ולז'אנר.
-// פונקציה "טהורה": לא נוגעת ב-state, בכתובת או במסך — ולכן קל לבדוק אותה לבד.
 export function filterShows<T extends Show>(shows: T[], { query, genre }: ShowFilters): T[] {
   const search = normalize(query)
 
@@ -17,8 +15,7 @@ export function filterShows<T extends Show>(shows: T[], { query, genre }: ShowFi
   })
 }
 
-// " Pokémon" → "pokemon": בלי אותיות גדולות, בלי סימנים מעל אותיות, ובלי רווחים בקצוות.
-// כך "cafe" מוצא גם "Café".
+// " Pokémon" → "pokemon", כך ש-"cafe" מוצא גם את "Café"
 export function normalize(text: string): string {
   return text
     .normalize('NFD')
@@ -43,12 +40,11 @@ export function countGenres(shows: Show[]): GenreCount[] {
     .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name))
 }
 
-// מה כותבים כשאין אף סדרה להציג. ההודעה תלויה במה שהמשתמש עשה, כדי שיידע מה לשנות.
-// total = כמה סדרות נטענו. החיפוש עובר רק עליהן, לא על כל הקטלוג של TVmaze (ראו "Not now" ב-PRD).
+// ההודעה כשאין תוצאות. total = כמה סדרות נטענו (החיפוש לא עובר על כל הקטלוג, ראו "Not now" ב-PRD).
 export function describeNoResults({ query, genre }: ShowFilters, total: number): string {
   const search = query.trim()
 
-  // השמות ב-TVmaze באנגלית, אז חיפוש בעברית לא ימצא כלום. עדיף להגיד את זה מאשר סתם "אין תוצאות".
+  // השמות ב-TVmaze באנגלית, אז חיפוש בעברית לא ימצא כלום
   if (/[א-ת]/.test(search)) {
     return `שמות הסדרות כאן באנגלית, כמו בשידור המקורי. נסו לכתוב את "${search}" באנגלית.`
   }

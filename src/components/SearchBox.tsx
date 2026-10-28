@@ -6,7 +6,6 @@ type SearchBoxProps = {
   onChange: (value: string) => void
 }
 
-// שדה מבוקר (controlled): הערך מגיע מהעמוד, וכל הקלדה עולה חזרה לעמוד דרך onChange.
 export default function SearchBox({ value, onChange }: SearchBoxProps) {
   return (
     <div className="search-box">

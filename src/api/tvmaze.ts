@@ -1,22 +1,20 @@
-// כל הכתובות של TVmaze במקום אחד. API חינמי, בלי מפתח, ופתוח לדפדפן (CORS).
 const BASE_URL = 'https://api.tvmaze.com'
 
-// עמוד 0 של הקטלוג: בערך 240 סדרות, כל אחת עם כל השדות שהקיר צריך.
+// עמוד 0 של הקטלוג, בערך 240 סדרות
 export const SHOWS_URL = `${BASE_URL}/shows`
 
-// סדרה אחת, יחד עם השחקנים שלה (embed=cast חוסך בקשה נוספת).
+// embed=cast: השחקנים מגיעים באותה בקשה
 export function showUrl(id: string): string {
   return `${BASE_URL}/shows/${id}?embed=cast`
 }
 
-// לוח השידורים של היום בארה"ב: כל הפרקים שמשודרים היום, וכל אחד עם הסדרה שלו.
+// לוח השידורים של היום בארה"ב
 export const SCHEDULE_URL = `${BASE_URL}/schedule?country=US`
 
-// שגיאה מיוחדת ל-404, כדי שעמוד הסדרה יציג "לא נמצא" ולא "תקלה ברשת".
+// ל-404 יש שגיאה משלו, כדי שעמוד הסדרה יציג "לא נמצא" ולא הודעה על תקלה ברשת
 export class NotFoundError extends Error {}
 
-// fetch לא זורק שגיאה על 404 או 500 — רק כשאין רשת. לכן בודקים את הסטטוס בעצמנו.
-// T הוא הטיפוס שאנחנו מצפים לקבל. TypeScript לא יכול לבדוק את התשובה בזמן ריצה, אז אנחנו מצהירים עליו.
+// fetch זורק שגיאה רק כשאין רשת. על 404 או 500 צריך לבדוק את הסטטוס לבד.
 export async function fetchJson<T>(url: string): Promise<T> {
   const response = await fetch(url)
 

@@ -5,7 +5,7 @@ type CastListProps = {
   cast: CastMember[]
 }
 
-// כמה שחקנים מציגים. TVmaze מחזיר אותם לפי סדר החשיבות בסדרה.
+// TVmaze מחזיר את השחקנים לפי החשיבות שלהם בסדרה, אז מציגים את הראשונים.
 const MAX_CAST = 8
 
 export default function CastList({ cast }: CastListProps) {
@@ -15,7 +15,7 @@ export default function CastList({ cast }: CastListProps) {
     <section className="cast" aria-labelledby="cast-title">
       <h2 id="cast-title">שחקנים</h2>
       <ul className="cast__list">
-        {/* אותו שחקן יכול לשחק שתי דמויות, ולכן ה-key משלב את השחקן ואת הדמות */}
+        {/* אותו שחקן יכול לשחק כמה דמויות, ולכן ה-key משלב שחקן ודמות */}
         {cast.slice(0, MAX_CAST).map(({ person, character }) => (
           <li key={`${person.id}-${character.id}`}>
             <span className="cast__person" dir="ltr">

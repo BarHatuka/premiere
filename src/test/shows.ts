@@ -2,7 +2,6 @@ import { vi } from 'vitest'
 import type { ScheduleEntry, ShowDetails, ShowWithCast } from '../types/tvmaze'
 
 // סדרה לבדיקות, במבנה של TVmaze. כל בדיקה משנה רק את השדות שחשובים לה.
-// Partial<ShowDetails>: אותו טיפוס, אבל כל השדות בו אופציונליים.
 export function makeShow(overrides: Partial<ShowDetails> = {}): ShowDetails {
   return {
     id: 1,
@@ -52,7 +51,7 @@ export const personOfInterestWithCast: ShowWithCast = {
   },
 }
 
-// הסדרות של הקיר בבדיקות, בסדר "מבולגן" בכוונה — כדי לבדוק שהקיר ממיין אותן לפי דירוג.
+// הסדרות של הקיר בבדיקות, בסדר "מבולגן" בכוונה, כדי לבדוק שהקיר ממיין אותן לפי דירוג.
 export const testShows = [
   makeShow({ id: 8, name: 'Glee', genres: ['Drama', 'Music', 'Romance'], rating: { average: 6.6 } }),
   personOfInterest,
@@ -62,8 +61,7 @@ export const testShows = [
   makeShow({ id: 40, name: 'Death Note', genres: ['Anime', 'Fantasy', 'Thriller'], rating: { average: null } }),
 ]
 
-// fetch מדומה: לכל כתובת יש תשובה מוכנה. כתובת שלא ברשימה מחזירה 404, כמו TVmaze.
-// הבדיקות לא פונות לרשת בכלל.
+// fetch מדומה: לכל כתובת יש תשובה מוכנה, וכתובת שלא ברשימה מחזירה 404, כמו TVmaze
 export function fakeTvmaze(answers: Record<string, unknown>) {
   return vi.fn(async (input: string | URL | Request) => {
     const url = String(input)

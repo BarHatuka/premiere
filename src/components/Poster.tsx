@@ -3,17 +3,16 @@ import './Poster.css'
 
 type PosterProps = {
   src: string
-  alt: string // ריק בכרטיס, שבו השם כתוב ממילא מתחת
-  fallbackText: string // מה כותבים במקום התמונה, אם היא לא נטענה
+  alt: string
+  fallbackText: string
 }
 
-// תמונת פוסטר שנכנסת בעדינות כשהיא נטענת, ואם היא נכשלת — מציגה את שם הסדרה במקומה.
-// ה-state כאן מקומי: רק הפוסטר עצמו צריך לדעת אם התמונה שלו נטענה.
+// אם התמונה לא נטענת, מציגים במקומה את שם הסדרה.
 export default function Poster({ src, alt, fallbackText }: PosterProps) {
   const [status, setStatus] = useState<'loading' | 'loaded' | 'failed'>('loading')
 
   if (status === 'failed') {
-    // בלי alt — מסתירים מקורא המסך, כדי שלא יקריא את השם פעמיים
+    // בלי alt (בכרטיס) מסתירים מקורא המסך, כי השם כבר כתוב מתחת
     return alt ? (
       <span className="poster poster--missing" role="img" aria-label={alt}>
         <span dir="ltr">{fallbackText}</span>

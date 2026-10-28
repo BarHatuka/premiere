@@ -9,7 +9,6 @@ type ShowListProps = {
 export default function ShowList({ shows }: ShowListProps) {
   return (
     <ul className="show-list">
-      {/* key: המזהה של הסדרה ב-TVmaze. הוא לא משתנה, גם כשהרשימה מסוננת או ממוינת מחדש */}
       {shows.map((show) => (
         <li key={show.id}>
           <ShowCard show={show} />

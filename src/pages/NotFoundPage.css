@@ -6,7 +6,7 @@
   text-align: center;
 }
 
-/* מסגרת פוסטר ריקה, כמו מקום על הקיר שמחכה לסדרה */
+/* מסגרת של פוסטר ריק */
 .not-found__frame {
   width: 96px;
   aspect-ratio: 2 / 3;

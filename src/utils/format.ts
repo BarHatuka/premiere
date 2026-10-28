@@ -1,9 +1,6 @@
 import type { ShowDetails } from '../types/tvmaze'
 import { dayLabel } from './labels'
 
-// פונקציות קטנות שהופכות שדות מ-TVmaze לטקסט שמוצג על המסך.
-// אין בהן React, ולכן אפשר לבדוק אותן לבד (format.test.ts).
-
 // "2011-09-22" → "2011". בלי תאריך → מחרוזת ריקה.
 export function getYear(date: string | null): string {
   return date ? date.slice(0, 4) : ''
@@ -20,8 +17,7 @@ export function formatList(items: string[]): string {
   return hebrewList.format(items)
 }
 
-// התקציר מגיע כ-HTML. DOMParser מפרק אותו בלי להריץ אותו, ו-textContent משאיר רק את הטקסט.
-// כך לא צריך dangerouslySetInnerHTML, ושום קוד מבחוץ לא נכנס לדף.
+// התקציר מגיע כ-HTML. DOMParser מוציא ממנו רק את הטקסט, כך שלא צריך dangerouslySetInnerHTML.
 export function htmlToText(html: string | null): string {
   if (!html) return ''
   const doc = new DOMParser().parseFromString(html, 'text/html')

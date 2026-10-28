@@ -13,14 +13,12 @@ import './HomePage.css'
 export default function HomePage() {
   const { state, retry } = useFetch<Show[]>(SHOWS_URL)
 
-  // החיפוש והז'אנר נשמרים בכתובת (/?genre=Comedy&q=new) ולא ב-useState:
-  // כך "אחורה" מעמוד של סדרה מחזיר לאותו קיר מסונן, ואפשר לשלוח קישור לחבר.
+  // החיפוש והז'אנר נשמרים בכתובת ולא ב-useState, כדי שאפשר יהיה לחזור לקיר המסונן ולשלוח אליו קישור.
   const [searchParams, setSearchParams] = useSearchParams()
   const query = searchParams.get('q') ?? ''
   const genre = searchParams.get('genre')
 
-  // משנה פרמטר אחד בכתובת ומשאיר את השאר. ערך ריק מוחק את הפרמטר.
-  // replace: הקלדה לא יוצרת רשומה חדשה בהיסטוריה על כל אות.
+  // replace: הקלדה בשדה החיפוש לא מוסיפה רשומה להיסטוריה על כל אות.
   function updateParam(name: 'q' | 'genre', value: string | null) {
     setSearchParams(
       (current) => {
@@ -38,7 +36,6 @@ export default function HomePage() {
     return <StatusMessage type="error" title="לא הצלחנו לטעון את הסדרות" details={state.message} onRetry={retry} />
   }
 
-  // ערכים שמחושבים מהמידע ומהכתובת בכל רינדור — לא שומרים אותם ב-state נוסף.
   const wall = wallOrder(state.data)
   const visible = filterShows(wall, { query, genre })
   const countText =
@@ -69,7 +66,6 @@ export default function HomePage() {
       ) : (
         <div className="home__empty">
           <p>{describeNoResults({ query, genre }, wall.length)}</p>
-          {/* מחיקת כל הפרמטרים מהכתובת = הקיר המלא */}
           <button type="button" className="button" onClick={() => setSearchParams({}, { replace: true })}>
             הצגת כל הסדרות
           </button>

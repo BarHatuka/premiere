@@ -12,7 +12,6 @@ type GenreFilterProps = {
 export default function GenreFilter({ genres, selected, total, onSelect }: GenreFilterProps) {
   return (
     <div className="genre-filter" role="group" aria-label="סינון לפי ז'אנר">
-      {/* aria-pressed: קורא מסך אומר אם הכפתור "לחוץ" — כלומר אם הז'אנר הזה נבחר */}
       <button type="button" className="genre-filter__option" aria-pressed={selected === null} onClick={() => onSelect(null)}>
         הכול <span className="genre-filter__count">{total}</span>
       </button>

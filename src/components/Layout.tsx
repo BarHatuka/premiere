@@ -3,8 +3,6 @@ import { useMyList } from '../hooks/useMyList'
 import ScrollToTop from './ScrollToTop'
 import './Layout.css'
 
-// המסגרת של כל העמודים: כותרת עם ניווט למעלה, קרדיט למטה, והעמוד עצמו באמצע.
-// <Outlet /> הוא המקום שבו React Router מצייר את העמוד שמתאים לכתובת.
 export default function Layout() {
   const myList = useMyList()
 
@@ -21,7 +19,7 @@ export default function Layout() {
         </div>
 
         <nav className="site-nav" aria-label="ניווט ראשי">
-          {/* NavLink מוסיף class="active" לקישור של העמוד הנוכחי. end: רק "/" בדיוק, לא כל כתובת שמתחילה ב-"/" */}
+          {/* end: בלי זה "כל הסדרות" היה מסומן בכל עמוד, כי כל כתובת מתחילה ב-"/" */}
           <NavLink to="/" end>
             כל הסדרות
           </NavLink>

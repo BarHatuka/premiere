@@ -4,7 +4,7 @@
   color: var(--ivory-dim);
 }
 
-/* ---------- טוענים ---------- */
+/* טעינה */
 .status--loading .status__text {
   margin-bottom: 28px;
 }
@@ -35,7 +35,7 @@
   }
 }
 
-/* ---------- שגיאה ---------- */
+/* שגיאה */
 .status--error {
   max-width: 460px;
   margin: 8vh auto 0;

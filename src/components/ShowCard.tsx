@@ -15,10 +15,9 @@ export default function ShowCard({ show }: ShowCardProps) {
   const saved = useMyList().isSaved(show.id)
 
   return (
-    // כל הכרטיס הוא קישור לעמוד של הסדרה. Link משנה את הכתובת בלי לטעון את הדף מחדש.
     <Link to={`/shows/${show.id}`} className="show-card">
       <span className="show-card__frame">
-        {/* alt ריק: השם כתוב ממש מתחת, וקורא מסך לא צריך לשמוע אותו פעמיים */}
+        {/* alt ריק: השם כתוב מתחת לפוסטר, וקורא מסך לא צריך לשמוע אותו פעמיים */}
         {show.image ? (
           <Poster src={show.image.medium} alt="" fallbackText={show.name} />
         ) : (

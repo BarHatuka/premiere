@@ -1,7 +1,7 @@
 import type { Show } from '../types/tvmaze'
 
-// מה שמוצג בקיר: רק סדרות עם פוסטר, מהדירוג הגבוה לנמוך. סדרה בלי דירוג נחשבת 0 ויורדת לסוף.
-// מחזיר מערך חדש — לא משנה את המערך שקיבל (sort משנה במקום, ולכן קודם filter).
+// רק סדרות עם פוסטר, מהדירוג הגבוה לנמוך. סדרה בלי דירוג יורדת לסוף.
+// filter מחזיר מערך חדש, ולכן sort לא משנה את המערך שקיבלנו.
 export function wallOrder<T extends Show>(shows: T[]): T[] {
   return shows
     .filter((show) => show.image !== null)

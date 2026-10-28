@@ -6,7 +6,6 @@ type SaveButtonProps = {
   show: Show
 }
 
-// הטקסט אומר בדיוק מה יקרה בלחיצה: שמירה, או הסרה.
 export default function SaveButton({ show }: SaveButtonProps) {
   const myList = useMyList()
   const saved = myList.isSaved(show.id)
