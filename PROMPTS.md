@@ -174,3 +174,7 @@
 **19:05 · claude**
 
 > @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/9ecb2eb6-image.png" נראלי בסדר לא?
+
+**19:07 · claude**
+
+> אז למה היינו צריכים מקודם שלנות את הקוד ?
