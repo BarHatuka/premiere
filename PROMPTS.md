@@ -230,3 +230,11 @@
 **19:18 · claude**
 
 > @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/dac93583-image.png" הנה
+
+**19:20 · claude**
+
+> @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/69229fb7-image.png" ככה?
+
+**19:21 · claude**
+
+> @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/eb3ece0c-image.png" מה עכשיו?
