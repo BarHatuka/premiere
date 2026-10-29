@@ -142,3 +142,7 @@
 **18:55 · claude**
 
 > אני מוכן ליד מחשב
+
+**18:56 · claude**
+
+> @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/609dd791-image.png" הנה
