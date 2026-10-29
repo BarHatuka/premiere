@@ -238,3 +238,19 @@
 **19:21 · claude**
 
 > @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/eb3ece0c-image.png" מה עכשיו?
+
+**19:24 · claude**
+
+> .show-detail__facts dd {
+>   margin: 0;
+> }
+>
+> .show-detail__summary {
+>   margin: 0;
+>   max-width: 62ch;
+>   line-height: 1.7;
+>   text-align: left;
+>   color: var(--ivory-dim);
+> }
+>
+> תכניס לי את כל הקוד כאן ואז אעשה קופי פסט
