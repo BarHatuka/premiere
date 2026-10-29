@@ -154,3 +154,7 @@
 **18:58 · claude**
 
 > @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/ac063e04-image.png" מה עכשיו?
+
+**18:58 · claude**
+
+> אוקיי נפתח מה עכשיו?
