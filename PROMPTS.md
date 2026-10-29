@@ -63,3 +63,7 @@
 **14:05 · claude**
 
 > תוריד לי אותם שיהיה לי על קובץ במחשב
+
+**14:11 · claude**
+
+> @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/bdb7d39c-________-____________________.pdf" @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/969ed73c-________-_________________.pdf" @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/9e1f9f11-Premiere____________________.pdf" איך כל זה ומה ממולץ בעצם?
