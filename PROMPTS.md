@@ -308,3 +308,7 @@
 **23:10 · claude**
 
 > תסדר לי את זה
+
+**23:12 · claude**
+
+> @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/15cd5562-image.png" לא הבנתי זה לא טוב כאן?
