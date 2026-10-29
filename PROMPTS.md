@@ -170,3 +170,7 @@
 **19:04 · claude**
 
 > @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/da1eecd9-image.png" @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/009b05ba-image.png" ככה?
+
+**19:05 · claude**
+
+> @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/9ecb2eb6-image.png" נראלי בסדר לא?
