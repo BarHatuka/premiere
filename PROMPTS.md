@@ -109,3 +109,7 @@
 **18:46 · claude**
 
 > @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/6ab7d42c-image.png" אז מה להשאיר ומה למחוק?
+
+**18:48 · claude**
+
+> @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/e8ccf362-image.png" תגיד לי מה להשאיר ומה למחוק
