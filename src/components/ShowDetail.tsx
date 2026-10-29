@@ -1,5 +1,6 @@
+import { Link } from 'react-router'
 import type { ShowWithCast } from '../types/tvmaze'
-import { describeBroadcast, formatList, formatRating, formatRuntime, htmlToText } from '../utils/format'
+import { describeBroadcast, formatRating, formatRuntime, htmlToText } from '../utils/format'
 import { genreLabel, languageLabel } from '../utils/labels'
 import CastList from './CastList'
 import Icon from './Icon'
@@ -50,7 +51,13 @@ export default function ShowDetail({ show }: ShowDetailProps) {
           {show.genres.length > 0 && (
             <>
               <dt>ז'אנר</dt>
-              <dd>{formatList(show.genres.map(genreLabel))}</dd>
+             <dd className="show-detail__genres">
+                {show.genres.map((genre) => (
+                  <Link key={genre} to={`/?genre=${encodeURIComponent(genre)}`}>
+                    {genreLabel(genre)}
+                  </Link>
+                ))}
+              </dd>
             </>
           )}
           {runtime && (

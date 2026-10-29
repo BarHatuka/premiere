@@ -83,3 +83,12 @@ test('a show can be removed from "הרשימה שלי", and an empty list explai
   expect(screen.getByText(/הרשימה שלך עוד ריקה/)).toBeInTheDocument()
   expect(screen.getByRole('link', { name: /הרשימה שלי 0/ })).toBeInTheDocument()
 })
+
+test('a genre on a show page opens the wall filtered by that genre', async () => {
+  const user = userEvent.setup()
+  renderAt('/shows/2')
+
+  await user.click(await screen.findByRole('link', { name: 'פשע' }))
+
+  expect(await screen.findByRole('button', { name: /פשע/, pressed: true })).toBeInTheDocument()
+})
