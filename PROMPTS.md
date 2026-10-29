@@ -67,3 +67,11 @@
 **14:11 · claude**
 
 > @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/bdb7d39c-________-____________________.pdf" @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/969ed73c-________-_________________.pdf" @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/9e1f9f11-Premiere____________________.pdf" איך כל זה ומה ממולץ בעצם?
+
+**18:07 · claude**
+
+> https://app.notion.com/p/2883-3f91d753ff15812c853ee8f8379750a4
+>
+> האם הפרויקט שלי עונה על כלל הדרישות של המרצה 
+> כולל הכל 
+> תעבור לי בקפידה רבה
