@@ -83,6 +83,21 @@
   margin: 0;
 }
 
+.show-detail__genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+}
+
+.show-detail__genres a {
+  text-decoration-color: var(--brass-deep);
+  text-underline-offset: 5px;
+}
+
+.show-detail__genres a:hover {
+  color: var(--brass);
+}
+
 .show-detail__summary {
   margin: 0;
   max-width: 62ch;
