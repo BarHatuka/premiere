@@ -218,3 +218,7 @@
 **19:15 · claude**
 
 > מה לעשות אז
+
+**19:16 · claude**
+
+> @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/4ae651d9-image.png" הנה
