@@ -327,3 +327,7 @@
 **12:18 · claude**
 
 > @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/a99b4bcb-Premiere_Complete_Defense_One_Guide_HE.pdf" האם זה מכסה לי את כלל הקבצים שהוצאת לי / שנשלחו לך?
+
+**12:22 · claude**
+
+> איך המסמך עצמו מכסה לי את כלל ההגנה?
