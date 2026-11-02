@@ -24,6 +24,7 @@ const wallItems = async () => within(await screen.findByRole('region', { name: '
 test('an address that does not exist shows the not-found page', () => {
   renderAt('/xyz')
   expect(screen.getByRole('heading', { name: 'העמוד הזה לא בתוכנית' })).toBeInTheDocument()
+  expect(screen.getByText('/xyz')).toBeInTheDocument()
 })
 
 test('a show that TVmaze does not know (404), or an id that is not a number, shows the not-found page', async () => {
