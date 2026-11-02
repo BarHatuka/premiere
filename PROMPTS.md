@@ -331,3 +331,7 @@
 **12:22 · claude**
 
 > איך המסמך עצמו מכסה לי את כלל ההגנה?
+
+**12:23 · claude**
+
+> @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/314918ef-Premiere____________________.pdf" @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/fa51619d-________-_________________-1.pdf" @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/8ab338d4-________-____________________-1.pdf" אז ללמוד רק ממנו מתוך כל אלה ?
