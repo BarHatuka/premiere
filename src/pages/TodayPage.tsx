@@ -1,3 +1,9 @@
+// ─────────────────────────────────────────────
+// העמוד /today: לוח השידורים של היום בארה"ב, מקובץ לפי שעה.
+// משתמשים בו ב: App.tsx.
+// אם המרצה שואל "למה השעות לא לפי ישראל?": TVmaze נותן את השעה לפי אזור הזמן של הרשת, ולכן כתוב בעמוד "לפי שעון הרשת".
+// ─────────────────────────────────────────────
+
 // Link: כל שידור מקשר לעמוד של הסדרה
 import { Link } from 'react-router'
 // הכתובת של לוח השידורים
@@ -32,6 +38,7 @@ export default function TodayPage() {
 
   // מה שהעמוד מציג
   return (
+    // section עם שם לקורא מסך: הכותרת today-title
     <section className="today" aria-labelledby="today-title">
       {/* הכותרת של הלשונית */}
       <title>היום בטלוויזיה | פרמיירה</title>
@@ -50,6 +57,7 @@ export default function TodayPage() {
 
       {/* section לכל שעה. key: השעה, שלא חוזרת */}
       {groups.map((group) => (
+        // קבוצה של שעה אחת
         <section key={group.hour} className="today__hour">
           {/* כותרת השעה. מחרוזת ריקה היא שידורים בלי שעה קבועה */}
           <h2 className="today__hour-title">{group.hour || 'בלי שעה קבועה'}</h2>
@@ -57,6 +65,7 @@ export default function TodayPage() {
           <ul className="today__list">
             {/* שורה לכל שידור. key: המזהה של הפרק */}
             {group.entries.map((entry) => (
+              // שידור אחד
               <li key={entry.id} className="today__entry">
                 {/* השעה המדויקת */}
                 <span className="today__time">{entry.airtime}</span>
@@ -67,6 +76,7 @@ export default function TodayPage() {
                 {/* עונה ופרק, ושם הפרק אם יש */}
                 <span className="today__episode">
                   {describeEpisode(entry)}
+                  {/* אם לפרק יש שם, מוסיפים נקודה ואת השם */}
                   {entry.name && (
                     <>
                       {' · '}
@@ -76,6 +86,7 @@ export default function TodayPage() {
                 </span>
                 {/* הרשת, אם ידועה */}
                 {entry.show.network && (
+                  // שם הרשת, באנגלית
                   <span className="today__network" dir="ltr">
                     {entry.show.network.name}
                   </span>

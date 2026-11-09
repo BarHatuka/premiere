@@ -1,3 +1,9 @@
+// ─────────────────────────────────────────────
+// מידע מזויף לבדיקות: סדרות, לוח שידורים, ו-fetch מזויף שעונה בלי רשת.
+// משתמשים בו בכל קובצי הבדיקות.
+// אם המרצה שואל "למה fetch מזויף?": כדי שהבדיקות לא ייכשלו כשאין אינטרנט או כש-TVmaze משנה מידע, ושיריצו תמיד אותו דבר.
+// ─────────────────────────────────────────────
+
 // vi.fn: פונקציה מזויפת
 import { vi } from 'vitest'
 // הטיפוסים של TVmaze
@@ -36,6 +42,7 @@ export function makeShow(overrides: Partial<ShowDetails> = {}): ShowDetails {
 // הערכים של Person of Interest הועתקו מהתשובה האמיתית של https://api.tvmaze.com/shows/2.
 // Person of Interest עם הנתונים האמיתיים שלה
 export const personOfInterest = makeShow({
+  // השדות האמיתיים מ-TVmaze. כל השאר מגיע מ-makeShow
   id: 2,
   name: 'Person of Interest',
   genres: ['Action', 'Crime', 'Science-Fiction'],
@@ -50,6 +57,7 @@ export const personOfInterest = makeShow({
 // אותה סדרה, עם שני שחקנים, כמו שהיא מגיעה מ-/shows/2?embed=cast
 export const personOfInterestWithCast: ShowWithCast = {
   ...personOfInterest,
+  // השחקנים, כמו ב-embed=cast
   _embedded: {
     cast: [
       { person: { id: 1, name: 'Jim Caviezel' }, character: { id: 1, name: 'John Reese' } },
@@ -61,6 +69,7 @@ export const personOfInterestWithCast: ShowWithCast = {
 // הסדרות של הקיר בבדיקות, בסדר "מבולגן" בכוונה, כדי לבדוק שהקיר ממיין אותן לפי דירוג.
 // שש סדרות. הדירוג של Death Note הוא null, כדי לבדוק שהיא יורדת לסוף
 export const testShows = [
+  // Glee, בלי סדר דירוג
   makeShow({ id: 8, name: 'Glee', genres: ['Drama', 'Music', 'Romance'], rating: { average: 6.6 } }),
   personOfInterest,
   makeShow({ id: 58, name: 'New Girl', genres: ['Comedy', 'Romance'], rating: { average: 7.3 } }),
@@ -86,6 +95,7 @@ export function fakeTvmaze(answers: Record<string, unknown>) {
 // שידור אחד בלוח של היום
 // יוצר שידור לבדיקה, עם ערכי ברירת מחדל
 export function makeEntry(overrides: Partial<ScheduleEntry> = {}): ScheduleEntry {
+  // ערכי ברירת המחדל של שידור
   return {
     id: 1,
     name: 'Pilot',
@@ -100,7 +110,9 @@ export function makeEntry(overrides: Partial<ScheduleEntry> = {}): ScheduleEntry
 
 // לוח של היום עם שני שידורים, בסדר הפוך בכוונה (22:00 לפני 20:00)
 export const todaysSchedule = [
+  // Person of Interest ב-22:00
   makeEntry({ id: 101, airtime: '22:00', show: personOfInterest, season: 5, number: 13, name: 'return 0' }),
+  // Glee ב-20:00
   makeEntry({ id: 102, airtime: '20:00', show: testShows[0], season: 6, number: 1, name: 'Loser Like Me' }),
 ]
 

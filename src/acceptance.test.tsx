@@ -1,3 +1,8 @@
+// ─────────────────────────────────────────────
+// בדיקה אחת לכל שורת קבלה ב-PRD.md, באותו נוסח. זה ההוכחה שהאפליקציה עושה מה שהבטחנו.
+// מריצים עם npm test.
+// ─────────────────────────────────────────────
+
 // render מצייר, screen מחפש במסך, within מחפש בתוך אלמנט
 import { render, screen, within } from '@testing-library/react'
 // מדמה משתמש שלוחץ ומקליד
@@ -33,6 +38,7 @@ function CurrentAddress() {
 
 // מצייר את האפליקציה בכתובת path, יחד עם הצגת הכתובת
 function renderAt(path: string) {
+  // מציירים את האפליקציה, ולידה את הכתובת הנוכחית
   return render(
     // מתחילים בכתובת path
     <MemoryRouter initialEntries={[path]}>
@@ -95,10 +101,15 @@ test('When I click "Person of Interest", I see the address /shows/2, its rating 
 
   // כל מה שצריך להופיע בעמוד הסדרה
   async function expectShowPage() {
+    // הכותרת היא שם הסדרה
     expect(await screen.findByRole('heading', { level: 1, name: 'Person of Interest' })).toBeInTheDocument()
+    // הכתובת היא /shows/2
     expect(address()).toHaveTextContent('/shows/2')
+    // הדירוג
     expect(screen.getByText('8.8')).toBeInTheDocument()
+    // המשפט על השידור
     expect(screen.getByText(/שודרה בין 2011 ל-2016 ב-CBS/)).toBeInTheDocument()
+    // ובאזור "שחקנים" מופיע Michael Emerson
     expect(within(screen.getByRole('region', { name: 'שחקנים' })).getByText('Michael Emerson')).toBeInTheDocument()
   }
 

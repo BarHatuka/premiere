@@ -1,3 +1,8 @@
+// ─────────────────────────────────────────────
+// עמוד "לא נמצא", עם הכתובת שביקשו.
+// משתמשים בו ב: App.tsx (לכל כתובת אחרת, path="*") וב-ShowPage (סדרה שלא קיימת).
+// ─────────────────────────────────────────────
+
 // Link: קישור חזרה לקיר. useLocation: הכתובת שביקשו
 import { Link, useLocation } from 'react-router'
 // העיצוב של העמוד
@@ -9,6 +14,7 @@ export default function NotFoundPage() {
   const { pathname } = useLocation()
   // מה שהעמוד מציג
   return (
+    // section שעוטף את כל העמוד
     <section className="not-found">
       {/* הכותרת של הלשונית בדפדפן */}
       <title>העמוד לא נמצא | פרמיירה</title>

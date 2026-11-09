@@ -1,3 +1,7 @@
+// ─────────────────────────────────────────────
+// בדיקות של לוח השידורים: קיבוץ לפי שעה, תיאור פרק ותאריך.
+// ─────────────────────────────────────────────
+
 // כלי הבדיקה של Vitest
 import { expect, test } from 'vitest'
 // makeEntry: יוצר שידור מזויף לבדיקות
@@ -9,6 +13,7 @@ import { describeEpisode, formatAirdate, groupByHour } from './schedule'
 test('entries are grouped by the hour, earliest first, and entries without a time go last', () => {
   // ארבעה שידורים בסדר מעורבב. לאחד אין שעה
   const groups = groupByHour([
+    // 21:30, בלי שעה, 20:00 ו-21:00
     makeEntry({ id: 1, airtime: '21:30' }),
     makeEntry({ id: 2, airtime: '' }),
     makeEntry({ id: 3, airtime: '20:00' }),

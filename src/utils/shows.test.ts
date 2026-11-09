@@ -1,3 +1,7 @@
+// ─────────────────────────────────────────────
+// בדיקות של סדר הקיר.
+// ─────────────────────────────────────────────
+
 // test מגדיר בדיקה, ו-expect בודק שהתוצאה היא מה שציפינו
 import { expect, test } from 'vitest'
 // makeShow: יוצר סדרה מזויפת לבדיקות
@@ -9,6 +13,7 @@ import { wallOrder } from './shows'
 test('the wall is ordered from the highest rating down, and a show without a rating goes last', () => {
   // שלוש סדרות בסדר מעורבב
   const shows = [
+    // דירוגים 7.1, בלי דירוג, ו-8.8
     makeShow({ id: 1, rating: { average: 7.1 } }),
     makeShow({ id: 2, rating: { average: null } }),
     makeShow({ id: 3, rating: { average: 8.8 } }),

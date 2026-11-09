@@ -1,3 +1,9 @@
+// ─────────────────────────────────────────────
+// התצוגה של עמוד סדרה: פוסטר, דירוג, שידור, ז'אנרים, תקציר, שמירה ושחקנים.
+// משתמשים בו ב: ShowPage, שטוען את הסדרה ומעביר אותה ב-props.
+// אם המרצה שואל "למה ShowPage ו-ShowDetail נפרדים?": אחד טוען ומטפל בטעינה ובשגיאות, והשני רק מציג. ככה כל רכיב עושה דבר אחד.
+// ─────────────────────────────────────────────
+
 // Link: קישור פנימי, בשביל הז'אנרים
 import { Link } from 'react-router'
 // הטיפוס של סדרה עם השחקנים
@@ -57,6 +63,7 @@ export default function ShowDetail({ show }: ShowDetailProps) {
           {rating ? (
             // Fragment: כמה אלמנטים בלי עטיפה נוספת
             <>
+              {/* כוכב, המספר והטקסט "מתוך 10" */}
               <Icon name="star" filled />
               <span className="show-detail__rating-value">{rating}</span>
               <span className="show-detail__rating-label">מתוך 10, לפי צופי TVmaze</span>
@@ -75,6 +82,7 @@ export default function ShowDetail({ show }: ShowDetailProps) {
           {/* ז'אנרים, רק אם יש */}
           {show.genres.length > 0 && (
             <>
+              {/* dt: שם השדה, dd: הערך */}
               <dt>ז'אנר</dt>
              <dd className="show-detail__genres">
                 {/* כל ז'אנר הוא קישור לקיר מסונן לפי אותו ז'אנר */}
@@ -91,6 +99,7 @@ export default function ShowDetail({ show }: ShowDetailProps) {
           {/* אורך פרק, רק אם ידוע */}
           {runtime && (
             <>
+              {/* שם השדה והערך */}
               <dt>אורך פרק</dt>
               <dd>{runtime}</dd>
             </>
@@ -98,6 +107,7 @@ export default function ShowDetail({ show }: ShowDetailProps) {
           {/* שפה, רק אם ידועה */}
           {show.language && (
             <>
+              {/* שם השדה, והשפה בעברית */}
               <dt>שפה</dt>
               <dd>{languageLabel(show.language)}</dd>
             </>
@@ -106,6 +116,7 @@ export default function ShowDetail({ show }: ShowDetailProps) {
 
         {/* התקציר, רק אם יש. TVmaze שולח HTML, ו-htmlToText הופך אותו לטקסט רגיל */}
         {show.summary && (
+          // dir="ltr" ו-lang="en": התקציר באנגלית. קורא מסך יקרא אותו במבטא נכון
           <p className="show-detail__summary" dir="ltr" lang="en">
             {htmlToText(show.summary)}
           </p>
@@ -117,12 +128,14 @@ export default function ShowDetail({ show }: ShowDetailProps) {
           <SaveButton show={show} />
           {/* קישורים חיצוניים. target="_blank": בלשונית חדשה. rel="noreferrer": בלי לחשוף את האתר שלנו לאתר שנפתח */}
           <p className="show-detail__links">
+            {/* הקישור לעמוד הסדרה ב-TVmaze */}
             <a href={show.url} target="_blank" rel="noreferrer">
               לעמוד הסדרה ב-TVmaze
               <Icon name="external" />
             </a>
             {/* האתר הרשמי, רק אם יש */}
             {show.officialSite && (
+              // הקישור לאתר הרשמי
               <a href={show.officialSite} target="_blank" rel="noreferrer">
                 לאתר הרשמי
                 <Icon name="external" />

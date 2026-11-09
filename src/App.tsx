@@ -1,3 +1,10 @@
+// ─────────────────────────────────────────────
+// מפת הכתובות של האתר: איזה עמוד מוצג בכל כתובת.
+// משתמשים בו ב: main.tsx, ובבדיקות (App.test.tsx, acceptance.test.tsx).
+// הזרימה: הכתובת משתנה ← Routes בוחר Route ← העמוד מוצג בתוך ה-Outlet של Layout.
+// אם המרצה שואל "איפה ה-state של הסדרה שנבחרה?": אין כזה. הסדרה שנבחרה היא חלק מהכתובת (/shows/:id), ולכן היא שורדת רענון ואפשר לשלוח אותה בקישור.
+// ─────────────────────────────────────────────
+
 // Route ו-Routes: מגדירים איזה רכיב מוצג באיזו כתובת
 import { Route, Routes } from 'react-router'
 // Layout: המסגרת הקבועה, כלומר הכותרת, הניווט והתחתית
@@ -6,6 +13,7 @@ import Layout from './components/Layout'
 import MyListProvider from './components/MyListProvider'
 // ארבעת העמודים, ועמוד "לא נמצא"
 import HomePage from './pages/HomePage'
+// שאר העמודים: הרשימה שלי, לא נמצא, עמוד סדרה ולוח השידורים
 import MyListPage from './pages/MyListPage'
 import NotFoundPage from './pages/NotFoundPage'
 import ShowPage from './pages/ShowPage'

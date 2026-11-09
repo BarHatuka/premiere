@@ -1,3 +1,9 @@
+// ─────────────────────────────────────────────
+// העמוד /my-list: הסדרות ששמרתי, עם כפתור הסרה לכל אחת.
+// משתמשים בו ב: App.tsx.
+// אם המרצה שואל "למה העמוד לא שולח בקשה ל-TVmaze?": ברשימה שמורים כבר כל השדות של הכרטיס (toSavedShow ב-utils/myList.ts).
+// ─────────────────────────────────────────────
+
 // Link: קישור פנימי לקיר, כשהרשימה ריקה
 import { Link } from 'react-router'
 // אותו כרטיס כמו בקיר
@@ -14,6 +20,7 @@ export default function MyListPage() {
 
   // מה שהעמוד מציג
   return (
+    // section עם שם לקורא מסך: הכותרת my-list-title
     <section className="my-list" aria-labelledby="my-list-title">
       {/* הכותרת של הלשונית בדפדפן. React 19 מעביר את התגית הזאת ל-head לבד */}
       <title>הרשימה שלי | פרמיירה</title>
@@ -43,6 +50,7 @@ export default function MyListPage() {
           <ul className="my-list__grid">
             {/* כרטיס וכפתור הסרה לכל סדרה. key: המזהה של הסדרה */}
             {myList.shows.map((show) => (
+              // פריט לכל סדרה
               <li key={show.id}>
                 {/* הכרטיס, עם קישור לעמוד הסדרה */}
                 <ShowCard show={show} />

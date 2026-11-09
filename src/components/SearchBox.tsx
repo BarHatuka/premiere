@@ -1,3 +1,9 @@
+// ─────────────────────────────────────────────
+// תיבת החיפוש בקיר.
+// משתמשים בו ב: HomePage.
+// אם המרצה שואל "מה זה controlled input?": הערך של השדה מגיע מ-props (value), וכל הקלדה מדווחת למעלה (onChange). כך הערך תמיד שווה למה שבכתובת.
+// ─────────────────────────────────────────────
+
 // אייקונים: זכוכית מגדלת ואיקס
 import Icon from './Icon'
 // העיצוב של תיבת החיפוש
@@ -13,6 +19,7 @@ type SearchBoxProps = {
 export default function SearchBox({ value, onChange }: SearchBoxProps) {
   // מה שהרכיב מציג
   return (
+    // עוטף את השדה ואת האייקונים, כדי למקם אותם בתוכו
     <div className="search-box">
       {/* label מוסתר מהעין אבל לא מקורא המסך. htmlFor מחבר אותו לשדה עם id="show-search" */}
       <label className="visually-hidden" htmlFor="show-search">
@@ -45,6 +52,7 @@ export default function SearchBox({ value, onChange }: SearchBoxProps) {
       />
       {/* כפתור הניקוי מופיע רק כשיש טקסט */}
       {value && (
+        // aria-label: לכפתור יש רק אייקון, אז נותנים לו שם בשביל קורא מסך
         <button type="button" className="search-box__clear" aria-label="ניקוי החיפוש" onClick={() => onChange('')}>
           {/* איקס */}
           <Icon name="close" />

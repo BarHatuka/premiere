@@ -1,3 +1,9 @@
+// ─────────────────────────────────────────────
+// פונקציות שמנסחות טקסט לתצוגה: שנה, דירוג, אורך פרק, תקציר ומשפט השידור.
+// משתמשים בו ב: ShowCard, ‏ShowDetail, ובבדיקות format.test.ts.
+// אם המרצה שואל "למה לא dangerouslySetInnerHTML לתקציר?": הכנסת HTML מבחוץ לדף יכולה להריץ קוד זדוני (XSS). כאן מוציאים ממנו רק את הטקסט.
+// ─────────────────────────────────────────────
+
 // הטיפוס של פרטי סדרה
 import type { ShowDetails } from '../types/tvmaze'
 // מתרגם שם יום לעברית
@@ -20,6 +26,7 @@ export function formatRating(average: number | null): string | null {
 const hebrewList = new Intl.ListFormat('he', { style: 'long', type: 'conjunction' })
 // מחזירה את הרשימה כמשפט
 export function formatList(items: string[]): string {
+  // Intl.ListFormat עושה את כל העבודה
   return hebrewList.format(items)
 }
 

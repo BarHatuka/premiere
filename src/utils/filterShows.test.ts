@@ -1,3 +1,7 @@
+// ─────────────────────────────────────────────
+// בדיקות של החיפוש והסינון. אלה פונקציות טהורות, ולכן הבדיקות לא צריכות לצייר כלום.
+// ─────────────────────────────────────────────
+
 // describe מקבץ כמה בדיקות תחת שם אחד
 import { describe, expect, test } from 'vitest'
 // סדרות לדוגמה, ופונקציה שיוצרת סדרה
@@ -53,6 +57,7 @@ test('countGenres counts every genre, the most common first', () => {
   ]
   // דרמה ראשונה. קומדיה ופשע בתיקו, ולכן לפי האלף-בית
   expect(countGenres(shows)).toEqual([
+    // דרמה 2, ואחריה קומדיה ופשע, 1 כל אחת
     { name: 'Drama', count: 2 },
     { name: 'Comedy', count: 1 },
     { name: 'Crime', count: 1 },

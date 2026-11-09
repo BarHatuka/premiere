@@ -1,3 +1,9 @@
+// ─────────────────────────────────────────────
+// הודעת טעינה או הודעת שגיאה, משותפת לכל העמודים שטוענים מידע.
+// משתמשים בו ב: HomePage, ‏ShowPage, ‏TodayPage.
+// אם המרצה שואל "מה זה ה-type ב-props?": union type. אם type הוא 'error', ‏TypeScript מחייב להעביר גם title, ‏details ו-onRetry.
+// ─────────────────────────────────────────────
+
 // העיצוב של ההודעות
 import './StatusMessage.css'
 
@@ -12,6 +18,7 @@ type StatusMessageProps =
 export default function StatusMessage(props: StatusMessageProps) {
   // מצב טעינה. אחרי הבדיקה הזאת TypeScript יודע ש-props הוא מסוג loading
   if (props.type === 'loading') {
+    // מה שמוצג בזמן טעינה
     return (
       // role="status": קורא מסך מקריא את ההודעה כשהיא מופיעה
       <div className="status status--loading" role="status">
@@ -19,6 +26,7 @@ export default function StatusMessage(props: StatusMessageProps) {
         <p className="status__text">{props.text}</p>
         {/* 12 פוסטרים ריקים שלא משתנים, ולכן key לפי המיקום תקין כאן */}
         {props.posters && (
+          // aria-hidden: קורא מסך מדלג על הפוסטרים הריקים
           <ul className="status__skeleton" aria-hidden="true">
             {/* Array.from יוצר מערך של 12 פריטים, ולכל אחד li ריק */}
             {Array.from({ length: 12 }, (_, index) => (
@@ -32,6 +40,7 @@ export default function StatusMessage(props: StatusMessageProps) {
 
   // מצב שגיאה. role="alert": קורא מסך מקריא אותה מיד
   return (
+    // div עם role="alert"
     <div className="status status--error" role="alert">
       {/* הכותרת, למשל "לא הצלחנו לטעון את הסדרות" */}
       <h2 className="status__title">{props.title}</h2>

@@ -1,3 +1,8 @@
+// ─────────────────────────────────────────────
+// בדיקות של התנהגות שמעבר לשורות הקבלה: 404, קישור משותף, "חזרה", חיפוש בלי תוצאות, כותרת הלשונית, הסרה מהרשימה, וז'אנר כקישור.
+// מריצים עם npm test.
+// ─────────────────────────────────────────────
+
 // render מצייר, screen מחפש במסך, within מחפש בתוך אלמנט
 import { render, screen, within } from '@testing-library/react'
 // userEvent: מדמה משתמש אמיתי שלוחץ ומקליד
@@ -21,6 +26,7 @@ beforeEach(() => {
 
 // מצייר את האפליקציה כאילו פתחנו את הכתובת path
 function renderAt(path: string) {
+  // render מצייר את מה שבסוגריים בתוך דף מדומה (jsdom)
   return render(
     // initialEntries: הכתובת שבה מתחילים
     <MemoryRouter initialEntries={[path]}>

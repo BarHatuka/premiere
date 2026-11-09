@@ -1,3 +1,10 @@
+// ─────────────────────────────────────────────
+// העמוד הראשי (/): קיר הסדרות, עם חיפוש וסינון לפי ז'אנר.
+// משתמשים בו ב: App.tsx, ב-Route ה-index.
+// הזרימה: useFetch טוען ← wallOrder ממיין ← filterShows מסנן לפי q ו-genre מהכתובת ← ShowList מציג.
+// אם המרצה שואל "למה replace: true?": כדי שכל אות בחיפוש לא תוסיף רשומה להיסטוריה. בלי זה, "אחורה" היה מוחק אות אחת בכל לחיצה.
+// ─────────────────────────────────────────────
+
 // useSearchParams: קורא וכותב את החלק של הכתובת אחרי ה-? (למשל ?genre=Comedy&q=new)
 import { useSearchParams } from 'react-router'
 // הכתובת של רשימת הסדרות ב-TVmaze
@@ -35,6 +42,7 @@ export default function HomePage() {
   function updateParam(name: 'q' | 'genre', value: string | null) {
     // מקבלים את הפרמטרים הנוכחיים ומחזירים חדשים
     setSearchParams(
+      // פונקציה שמקבלת את הפרמטרים הנוכחיים
       (current) => {
         // עותק של הפרמטרים, כדי לא לשנות את המקור
         const next = new URLSearchParams(current)
@@ -98,8 +106,10 @@ export default function HomePage() {
 
       {/* יש תוצאות: מציגים את הקיר. אין: הסבר וכפתור לאיפוס */}
       {visible.length > 0 ? (
+        // יש תוצאות: הקיר
         <ShowList shows={visible} />
       ) : (
+        // אין תוצאות
         <div className="home__empty">
           {/* משפט שמסביר למה אין תוצאות */}
           <p>{describeNoResults({ query, genre }, wall.length)}</p>

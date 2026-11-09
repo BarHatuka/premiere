@@ -1,3 +1,9 @@
+// ─────────────────────────────────────────────
+// כרטיס של סדרה אחת: פוסטר, שם, שנה ודירוג. הכרטיס כולו הוא קישור לעמוד הסדרה.
+// משתמשים בו ב: ShowList (הקיר) וב-MyListPage.
+// אם המרצה שואל "למה Link ולא <a href>?": Link משנה את הכתובת בלי לטעון את הדף מחדש, ולכן ה-state (למשל "הרשימה שלי") נשמר והמעבר מהיר.
+// ─────────────────────────────────────────────
+
 // Link: הכרטיס כולו הוא קישור לעמוד של הסדרה
 import { Link } from 'react-router'
 // בשביל לבדוק אם הסדרה שמורה
@@ -43,6 +49,7 @@ export default function ShowCard({ show }: ShowCardProps) {
         )}
         {/* && מציג את הלב רק אם saved הוא true */}
         {saved && (
+          // העיגול עם הלב בפינת הפוסטר
           <span className="show-card__saved">
             {/* לב מלא */}
             <Icon name="heart" filled />
@@ -63,6 +70,7 @@ export default function ShowCard({ show }: ShowCardProps) {
         <span>{getYear(show.premiered)}</span>
         {/* הדירוג, רק אם יש */}
         {rating && (
+          // הדירוג
           <span className="show-card__rating">
             {/* המילה "דירוג" בשביל קורא מסך */}
             <span className="visually-hidden">דירוג </span>

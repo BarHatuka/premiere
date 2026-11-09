@@ -1,3 +1,8 @@
+// ─────────────────────────────────────────────
+// כל האייקונים של האתר, כ-SVG בתוך הקוד, בלי ספרייה חיצונית.
+// משתמשים בו ב: ShowCard, ‏ShowDetail, ‏BackLink, ‏SearchBox, ‏SaveButton.
+// ─────────────────────────────────────────────
+
 // ReactNode: כל דבר ש-React יודע לצייר
 import type { ReactNode } from 'react'
 
@@ -45,6 +50,7 @@ type IconProps = {
 export default function Icon({ name, filled = false }: IconProps) {
   // מה שהרכיב מציג
   return (
+    // תגית svg. כל מאפיין מוסבר בשורה שמעליו
     <svg
       // class לעיצוב
       className="icon"

@@ -1,3 +1,9 @@
+// ─────────────────────────────────────────────
+// רשימת השחקנים בעמוד הסדרה, עד 8 שחקנים.
+// משתמשים בו ב: ShowDetail.
+// אם המרצה מבקש "תציג 12 שחקנים": משנים את MAX_CAST. זה המקום היחיד.
+// ─────────────────────────────────────────────
+
 // הטיפוס של שחקן ברשימה
 import type { CastMember } from '../types/tvmaze'
 // העיצוב של הרשימה
@@ -28,6 +34,7 @@ export default function CastList({ cast }: CastListProps) {
         {/* אותו שחקן יכול לשחק כמה דמויות, ולכן ה-key משלב שחקן ודמות */}
         {/* slice(0, MAX_CAST): רק 8 הראשונים. map: פריט לכל שחקן. ({ person, character }) מפרק את האובייקט */}
         {cast.slice(0, MAX_CAST).map(({ person, character }) => (
+          // key: מזהה השחקן ומזהה הדמות ביחד, כי שחקן יכול לשחק כמה דמויות
           <li key={`${person.id}-${character.id}`}>
             {/* שם השחקן, באנגלית */}
             <span className="cast__person" dir="ltr">
