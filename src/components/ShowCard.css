@@ -1,3 +1,4 @@
+/* הכרטיס: פוסטר, שם ושורת מידע אחד מתחת לשני */
 .show-card {
   display: flex;
   flex-direction: column;
@@ -7,6 +8,7 @@
 }
 
 /* "מסגרת" הפוסטר: יחס 2:3 קבוע, כך שהקיר לא קופץ בזמן שהתמונות נטענות */
+/* המסגרת של הפוסטר, ביחס 2:3 של פוסטר קולנוע */
 .show-card__frame {
   position: relative;
   display: block;
@@ -20,11 +22,13 @@
   transition: outline-color 160ms ease, filter 160ms ease;
 }
 
+/* מעבר עכבר: הפוסטר מתבהר מעט */
 .show-card:hover .show-card__frame {
   filter: brightness(1.08);
   outline-color: var(--velvet-line);
 }
 
+/* מעבר עכבר: השם נצבע בפליז */
 .show-card:hover .show-card__name {
   color: var(--brass);
 }
@@ -34,6 +38,7 @@
   outline: none;
 }
 
+/* הפוקוס מהמקלדת מסומן סביב הפוסטר */
 .show-card:focus-visible .show-card__frame {
   outline: 2px solid var(--brass);
 }
@@ -53,6 +58,7 @@
   border-radius: 50%;
 }
 
+/* שם הסדרה */
 .show-card__name {
   font-family: var(--font-display);
   font-size: 1.1875rem;
@@ -63,6 +69,7 @@
   transition: color 160ms ease;
 }
 
+/* השורה של השנה והדירוג, אחד בכל צד */
 .show-card__meta {
   display: flex;
   justify-content: space-between;
@@ -72,6 +79,7 @@
   color: var(--ivory-faint);
 }
 
+/* הדירוג, עם כוכב */
 .show-card__rating {
   display: inline-flex;
   align-items: center;
@@ -79,6 +87,7 @@
   color: var(--ivory-dim);
 }
 
+/* הכוכב, בפליז */
 .show-card__rating .icon {
   font-size: 0.8125rem;
   color: var(--brass);

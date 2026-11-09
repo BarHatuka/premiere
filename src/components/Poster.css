@@ -1,3 +1,4 @@
+/* התמונה ממלאת את המסגרת. היא שקופה עד שהיא נטענת */
 .poster {
   display: block;
   width: 100%;
@@ -7,10 +8,12 @@
   transition: opacity 320ms ease;
 }
 
+/* התמונה נטענה: מופיעה בהדרגה */
 .poster[data-status='loaded'] {
   opacity: 1;
 }
 
+/* אין תמונה: מלבן עם שם הסדרה במרכז */
 .poster--missing {
   display: grid;
   place-items: center;

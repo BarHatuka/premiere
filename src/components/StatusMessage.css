@@ -1,3 +1,4 @@
+/* הטקסט של ההודעה */
 .status__text {
   margin: 0;
   font-size: 1.0625rem;
@@ -5,10 +6,12 @@
 }
 
 /* טעינה */
+/* בהודעת טעינה: רווח לפני הפוסטרים הריקים */
 .status--loading .status__text {
   margin-bottom: 28px;
 }
 
+/* הפוסטרים הריקים, באותה רשת כמו הקיר */
 .status__skeleton {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--poster-min), 1fr));
@@ -18,6 +21,7 @@
   list-style: none;
 }
 
+/* פוסטר ריק שמהבהב לאט */
 .status__skeleton li {
   aspect-ratio: 2 / 3;
   border-radius: var(--radius);
@@ -25,10 +29,12 @@
   animation: skeleton-pulse 1.6s ease-in-out infinite alternate;
 }
 
+/* כל פוסטר שני מתחיל להבהב מאוחר יותר, כך שזה נראה כמו גל */
 .status__skeleton li:nth-child(even) {
   animation-delay: 0.4s;
 }
 
+/* האנימציה: השקיפות יורדת ועולה */
 @keyframes skeleton-pulse {
   to {
     opacity: 0.45;
@@ -36,6 +42,7 @@
 }
 
 /* שגיאה */
+/* הודעת השגיאה: קופסה במרכז */
 .status--error {
   max-width: 460px;
   margin: 8vh auto 0;
@@ -45,11 +52,13 @@
   border: 1px solid var(--velvet-line);
 }
 
+/* הכותרת של השגיאה */
 .status__title {
   margin: 0 0 12px;
   font-size: 2rem;
 }
 
+/* הטקסט הטכני של השגיאה, קטן */
 .status__details {
   margin: 12px 0 24px;
   font-size: 0.875rem;

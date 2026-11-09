@@ -1,8 +1,10 @@
+/* הכותרת "שחקנים" */
 .cast h2 {
   margin: 0 0 14px;
   font-size: 1.5rem;
 }
 
+/* רשת של שחקנים. auto-fill: כמה עמודות שנכנסות, לפחות 190px כל אחת */
 .cast__list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
@@ -12,6 +14,7 @@
   list-style: none;
 }
 
+/* שחקן אחד, עם קו בצד */
 .cast__list li {
   display: grid;
   justify-items: start;
@@ -19,10 +22,12 @@
   border-inline-start: 1px solid var(--velvet-line);
 }
 
+/* שם השחקן */
 .cast__person {
   color: var(--ivory);
 }
 
+/* שם הדמות, קטן ובגוון חלש */
 .cast__character {
   font-size: 0.875rem;
   color: var(--ivory-faint);

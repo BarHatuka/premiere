@@ -1,9 +1,14 @@
+// הטיפוס של סדרה
 import type { Show } from '../types/tvmaze'
 
 // רק סדרות עם פוסטר, מהדירוג הגבוה לנמוך. סדרה בלי דירוג יורדת לסוף.
 // filter מחזיר מערך חדש, ולכן sort לא משנה את המערך שקיבלנו.
+// <T extends Show>: עובדת על כל טיפוס שיש בו לפחות את השדות של Show
 export function wallOrder<T extends Show>(shows: T[]): T[] {
+  // מתחילים מהמערך שקיבלנו
   return shows
+    // משאירים רק סדרות שיש להן תמונה
     .filter((show) => show.image !== null)
+    // b פחות a: מהגבוה לנמוך. ?? 0: סדרה בלי דירוג נחשבת 0, ולכן יורדת לסוף
     .sort((a, b) => (b.rating.average ?? 0) - (a.rating.average ?? 0))
 }

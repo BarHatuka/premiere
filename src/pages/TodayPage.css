@@ -1,8 +1,10 @@
+/* התאריך וההסבר על השעות */
 .today__intro {
   margin: 0 0 16px;
   color: var(--ivory-faint);
 }
 
+/* שעה אחת: השעה בעמודה צרה, השידורים לידה */
 .today__hour {
   display: grid;
   grid-template-columns: 5.5rem minmax(0, 1fr);
@@ -11,6 +13,7 @@
   border-top: 1px solid var(--velvet-line);
 }
 
+/* השעה */
 .today__hour-title {
   margin: 0;
   font-size: 1.75rem;
@@ -18,6 +21,7 @@
   color: var(--brass);
 }
 
+/* רשימת השידורים של השעה */
 .today__list {
   display: grid;
   gap: 14px;
@@ -26,6 +30,7 @@
   list-style: none;
 }
 
+/* שידור אחד: שעה, שם הסדרה ופרטי הפרק, והרשת בצד */
 .today__entry {
   display: grid;
   grid-template-columns: 3.5rem minmax(0, 1fr) auto;
@@ -33,12 +38,14 @@
   align-items: baseline;
 }
 
+/* השעה המדויקת, לאורך שתי שורות */
 .today__time {
   grid-row: span 2;
   font-variant-numeric: tabular-nums;
   color: var(--ivory-faint);
 }
 
+/* שם הסדרה, קישור */
 .today__show {
   justify-self: start;
   font-family: var(--font-display);
@@ -48,16 +55,19 @@
   text-decoration: none;
 }
 
+/* כשהעכבר מעליו */
 .today__show:hover {
   color: var(--brass);
 }
 
+/* עונה, פרק ושם הפרק */
 .today__episode {
   grid-column: 2;
   font-size: 0.875rem;
   color: var(--ivory-dim);
 }
 
+/* הרשת, בעמודה השלישית */
 .today__network {
   grid-column: 3;
   grid-row: 1;
@@ -66,6 +76,7 @@
   color: var(--ivory-faint);
 }
 
+/* מסך צר: השעה מעל השידורים, והרשת יורדת לשורה של הפרק */
 @media (max-width: 599px) {
   .today__hour {
     grid-template-columns: minmax(0, 1fr);

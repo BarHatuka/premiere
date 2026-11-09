@@ -1,4 +1,5 @@
 // ז'אנרים, ימים ושפות מגיעים מה-API באנגלית. מה שלא מופיע כאן מוצג כמו שהוא.
+// מילון ז'אנרים: השם באנגלית מ-TVmaze ← השם בעברית. Record<string, string>: מפתח טקסט וערך טקסט
 const GENRE_LABELS: Record<string, string> = {
   Action: 'אקשן',
   Adult: 'מבוגרים',
@@ -30,6 +31,7 @@ const GENRE_LABELS: Record<string, string> = {
   Western: 'מערבון',
 }
 
+// מילון ימים: השם באנגלית ← השם בעברית
 const DAY_LABELS: Record<string, string> = {
   Sunday: 'ראשון',
   Monday: 'שני',
@@ -40,6 +42,7 @@ const DAY_LABELS: Record<string, string> = {
   Saturday: 'שבת',
 }
 
+// מילון שפות: השם באנגלית ← השם בעברית
 const LANGUAGE_LABELS: Record<string, string> = {
   Arabic: 'ערבית',
   Chinese: 'סינית',
@@ -61,14 +64,20 @@ const LANGUAGE_LABELS: Record<string, string> = {
   Turkish: 'טורקית',
 }
 
+// מחזירה את שם הז'אנר בעברית
 export function genreLabel(genre: string): string {
+  // ?? genre: אם הז'אנר לא במילון, מחזירים אותו כמו שהוא, באנגלית
   return GENRE_LABELS[genre] ?? genre
 }
 
+// מחזירה את שם היום בעברית
 export function dayLabel(day: string): string {
+  // יום שלא במילון חוזר כמו שהוא
   return DAY_LABELS[day] ?? day
 }
 
+// מחזירה את שם השפה בעברית
 export function languageLabel(language: string): string {
+  // שפה שלא במילון חוזרת כמו שהיא
   return LANGUAGE_LABELS[language] ?? language
 }

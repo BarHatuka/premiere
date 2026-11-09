@@ -1,9 +1,11 @@
+/* שורת הז'אנרים */
 .genre-filter {
   display: flex;
   flex-wrap: wrap;
   gap: 4px 20px;
 }
 
+/* כפתור של ז'אנר: נראה כמו טקסט, עם קו תחתון שקוף */
 .genre-filter__option {
   padding: 6px 0;
   font: inherit;
@@ -16,15 +18,18 @@
   cursor: pointer;
 }
 
+/* כשהעכבר מעליו */
 .genre-filter__option:hover {
   color: var(--ivory);
 }
 
+/* הז'אנר הנבחר: לפי aria-pressed, אותו מאפיין שקורא מסך משתמש בו */
 .genre-filter__option[aria-pressed='true'] {
   color: var(--brass);
   border-bottom-color: var(--brass);
 }
 
+/* המספר הקטן שליד כל ז'אנר. tabular-nums: כל הספרות באותו רוחב */
 .genre-filter__count {
   margin-inline-start: 2px;
   font-size: 0.75rem;
@@ -33,6 +38,7 @@
 }
 
 /* בטלפון: שורה אחת שגוללים לצדדים, במקום שש שורות של ז'אנרים מעל הקיר */
+/* מסך צר: הז'אנרים בשורה אחת שגוללים הצידה */
 @media (max-width: 599px) {
   .genre-filter {
     flex-wrap: nowrap;

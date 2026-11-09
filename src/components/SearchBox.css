@@ -1,3 +1,4 @@
+/* תיבת החיפוש: האייקונים ממוקמים בתוכה */
 .search-box {
   position: relative;
   flex: 1 1 280px;
@@ -6,6 +7,7 @@
 
 /* dir="auto": השדה מתהפך לפי השפה שמקלידים, אבל האייקונים נשארים במקום.
    לכן הריפוד שווה משני הצדדים, כדי שהטקסט לא ייכנס מתחת לאייקונים. */
+/* השדה עצמו, עם מקום לאייקונים בשני הצדדים */
 .search-box__input {
   width: 100%;
   padding: 10px 40px;
@@ -19,20 +21,24 @@
   transition: border-color 160ms ease;
 }
 
+/* הטקסט האפור כשהשדה ריק */
 .search-box__input::placeholder {
   color: var(--ivory-faint);
 }
 
+/* שדה בפוקוס: הקו התחתון נצבע בפליז */
 .search-box__input:focus {
   outline: none;
   border-bottom-color: var(--brass);
 }
 
 /* לכרום יש כפתור ניקוי מובנה בשדה חיפוש; יש לנו כפתור משלנו */
+/* מסתירים את האיקס המובנה של Chrome, כי יש לנו כפתור משלנו */
 .search-box__input::-webkit-search-cancel-button {
   appearance: none;
 }
 
+/* זכוכית המגדלת, בצד ימין של השדה */
 .search-box__icon {
   position: absolute;
   top: 50%;
@@ -44,6 +50,7 @@
   pointer-events: none;
 }
 
+/* כפתור הניקוי, בצד שמאל */
 .search-box__clear {
   position: absolute;
   top: 50%;
@@ -59,6 +66,7 @@
   cursor: pointer;
 }
 
+/* כשהעכבר מעליו */
 .search-box__clear:hover {
   color: var(--brass);
 }

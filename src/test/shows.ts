@@ -1,8 +1,12 @@
+// vi.fn: פונקציה מזויפת
 import { vi } from 'vitest'
+// הטיפוסים של TVmaze
 import type { ScheduleEntry, ShowDetails, ShowWithCast } from '../types/tvmaze'
 
 // סדרה לבדיקות, במבנה של TVmaze. כל בדיקה משנה רק את השדות שחשובים לה.
+// Partial: כל השדות לא חובה. מה שלא מעבירים מקבל את ערך ברירת המחדל שלמטה
 export function makeShow(overrides: Partial<ShowDetails> = {}): ShowDetails {
+  // ערכי ברירת המחדל של סדרה לבדיקה
   return {
     id: 1,
     url: 'https://www.tvmaze.com/shows/1/test',
@@ -24,11 +28,13 @@ export function makeShow(overrides: Partial<ShowDetails> = {}): ShowDetails {
       original: 'https://static.tvmaze.com/test-original.jpg',
     },
     summary: '<p>A test summary.</p>',
+    // בסוף: השדות שהבדיקה העבירה דורסים את ברירת המחדל
     ...overrides,
   }
 }
 
 // הערכים של Person of Interest הועתקו מהתשובה האמיתית של https://api.tvmaze.com/shows/2.
+// Person of Interest עם הנתונים האמיתיים שלה
 export const personOfInterest = makeShow({
   id: 2,
   name: 'Person of Interest',
@@ -41,6 +47,7 @@ export const personOfInterest = makeShow({
   summary: '<p>You are being watched. The government has a secret system, a machine that spies on you every hour of every day.</p>',
 })
 
+// אותה סדרה, עם שני שחקנים, כמו שהיא מגיעה מ-/shows/2?embed=cast
 export const personOfInterestWithCast: ShowWithCast = {
   ...personOfInterest,
   _embedded: {
@@ -52,6 +59,7 @@ export const personOfInterestWithCast: ShowWithCast = {
 }
 
 // הסדרות של הקיר בבדיקות, בסדר "מבולגן" בכוונה, כדי לבדוק שהקיר ממיין אותן לפי דירוג.
+// שש סדרות. הדירוג של Death Note הוא null, כדי לבדוק שהיא יורדת לסוף
 export const testShows = [
   makeShow({ id: 8, name: 'Glee', genres: ['Drama', 'Music', 'Romance'], rating: { average: 6.6 } }),
   personOfInterest,
@@ -62,15 +70,21 @@ export const testShows = [
 ]
 
 // fetch מדומה: לכל כתובת יש תשובה מוכנה, וכתובת שלא ברשימה מחזירה 404, כמו TVmaze
+// מקבלת מילון כתובת ← תשובה, ומחזירה fetch מזויף
 export function fakeTvmaze(answers: Record<string, unknown>) {
+  // הפונקציה שתחליף את fetch
   return vi.fn(async (input: string | URL | Request) => {
+    // הכתובת שביקשו, כטקסט
     const url = String(input)
+    // יש לכתובת תשובה מוכנה: מחזירים אותה עם סטטוס 200
     if (url in answers) return new Response(JSON.stringify(answers[url]), { status: 200 })
+    // אין: מחזירים 404, כמו TVmaze
     return new Response('Not Found', { status: 404 })
   })
 }
 
 // שידור אחד בלוח של היום
+// יוצר שידור לבדיקה, עם ערכי ברירת מחדל
 export function makeEntry(overrides: Partial<ScheduleEntry> = {}): ScheduleEntry {
   return {
     id: 1,
@@ -84,11 +98,13 @@ export function makeEntry(overrides: Partial<ScheduleEntry> = {}): ScheduleEntry
   }
 }
 
+// לוח של היום עם שני שידורים, בסדר הפוך בכוונה (22:00 לפני 20:00)
 export const todaysSchedule = [
   makeEntry({ id: 101, airtime: '22:00', show: personOfInterest, season: 5, number: 13, name: 'return 0' }),
   makeEntry({ id: 102, airtime: '20:00', show: testShows[0], season: 6, number: 1, name: 'Loser Like Me' }),
 ]
 
+// התשובות הקבועות לשלוש הכתובות שהאפליקציה מבקשת
 export const defaultAnswers = {
   'https://api.tvmaze.com/shows': testShows,
   'https://api.tvmaze.com/shows/2?embed=cast': personOfInterestWithCast,

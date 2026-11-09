@@ -1,20 +1,24 @@
+/* החלק העליון של הקיר: חיפוש, ז'אנרים ומספר */
 .home__toolbar {
   display: grid;
   gap: 14px;
   margin-bottom: 32px;
 }
 
+/* המשפט "מוצגות X מתוך Y" */
 .home__count {
   margin: 0;
   font-size: 0.875rem;
   color: var(--ivory-faint);
 }
 
+/* כשאין תוצאות: הודעה במרכז */
 .home__empty {
   padding: 72px 16px;
   text-align: center;
 }
 
+/* ההסבר, בפונט של הכותרות */
 .home__empty p {
   max-width: 30ch;
   margin: 0 auto 20px;
