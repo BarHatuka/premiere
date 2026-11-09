@@ -363,3 +363,10 @@
 **20:21 · claude**
 
 > איפה השיונים והערוצ בעברית שעשית לי ?
+
+**20:26 · claude**
+
+> @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/4a37c099-premiere-main.zip" @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/b6af0d3f-Premiere_Master_Defense_Guide_With_Code_Map_HE-1.pdf" אם זה הפרויקט וזה ההגנה תשובות ושאלות 
+> ועכשיו עשינו הערות בעברית אז על מה כדאי וממולץ ללמוד בהגנה מול המרצה 
+> API בטוח הוא שואל איפה זה בקוד 
+> תעבור בקפידה ותגיד לי
