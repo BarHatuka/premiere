@@ -451,3 +451,9 @@
 **09:34 · claude**
 
 > @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/ab48d39c-premiere-defense_4_.html" @"/mnt/user-data/attachments/5337490f-7fea-5e7e-81b4-deaa071553a2/3582809e-Premiere_Master_Defense_Guide_With_Code_Map_HE-1.pdf" מה מהם ללמוד אז?
+
+**16:25 · claude**
+
+> אני רוצה שיהיה לי הגנה בדיוק על מה שעשית לי רק הרבה יותר טוב כלומר תראה לי את השיוני סקוד ואיפה בדיוק למה שינת ואז תראה לי מה קורה אחרי ענון באתר עצמו
+> שזה יהיה בוידאו בלבד
+> כמובן כלל ההגנה ב15 דקות עם הסבר
