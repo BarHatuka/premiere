@@ -65,7 +65,7 @@ export default function Layout() {
           <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
         </p>
         {/* שורה על הפרויקט */}
-        <p>פרויקט הגמר של בר במכללת אונו, נבנה ב-React, ב-TypeScript וב-Vite.</p>
+        <p>נבנה על ידי בר חתוכה · פרויקט גמר במכללת אונו · 2026.</p>
       </footer>
     </div>
   )
