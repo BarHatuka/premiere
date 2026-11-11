@@ -19,7 +19,7 @@ describe('getYear', () => {
 
   // בלי תאריך: מחרוזת ריקה
   test('returns an empty string when there is no date', () => {
-    // null → ''
+    // null → מחרוזת ריקה
     expect(getYear(null)).toBe('')
   })
 })

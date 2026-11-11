@@ -1,18 +1,26 @@
 <!doctype html>
+<!-- העמוד היחיד באתר. React מצייר את כל העמודים בתוכו, ו-React Router מחליף ביניהם בלי לטעון דף חדש -->
+<!-- lang="he" ו-dir="rtl": האתר בעברית, ולכן הכיוון מימין לשמאל -->
 <html lang="he" dir="rtl">
   <head>
     <meta charset="UTF-8" />
+    <!-- מתאים את רוחב העמוד למסך של הטלפון -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- התיאור שמופיע בתוצאות החיפוש של גוגל -->
     <meta name="description" content="מדריך לסדרות טלוויזיה: פוסטרים, דירוגים, שחקנים, לוח השידורים של היום ורשימה אישית. המידע מ-TVmaze." />
+    <!-- צבע שורת הכתובת בדפדפן בטלפון, כמו הרקע של האתר -->
     <meta name="theme-color" content="#2a1219" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- הגופנים מ-Google Fonts: Assistant לטקסט ו-Bellefair לכותרות. preconnect פותח את החיבור מוקדם, כדי שייטענו מהר יותר -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Bellefair&display=swap" rel="stylesheet" />
     <title>פרמיירה | מדריך סדרות</title>
   </head>
   <body>
+    <!-- כאן React מצייר את האפליקציה (createRoot ב-src/main.tsx) -->
     <div id="root"></div>
+    <!-- נקודת הכניסה של הקוד. Vite מתרגם את ה-TypeScript בזמן פיתוח, ואורז אותו ב-build -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

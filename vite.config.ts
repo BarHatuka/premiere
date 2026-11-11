@@ -7,8 +7,7 @@ import react from '@vitejs/plugin-react'
 // defineConfig: נותן השלמה אוטומטית ובדיקת טיפוסים להגדרות. מ-vitest/config כדי שגם החלק של הבדיקות יוכר
 import { defineConfig } from 'vitest/config'
 
-// https://vite.dev/config/
-// ההגדרות של Vite ושל Vitest
+// ההגדרות של Vite ושל Vitest. כל האפשרויות מוסברות בתיעוד: https://vite.dev/config/
 export default defineConfig({
   // מפעילים את התוסף של React
   plugins: [react()],

@@ -139,7 +139,7 @@ test('When I pick the "קומדיה" genre and type "new" in the search box, I s
   const items = await wallItems()
   // רק אחד
   expect(items).toHaveLength(1)
-  // New Girl
+  // והוא של New Girl
   expect(items[0]).toHaveTextContent('New Girl')
   // והכתובת נגמרת בפרמטרים הנכונים
   expect(address().textContent).toMatch(/\?genre=Comedy&q=new$/)

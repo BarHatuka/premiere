@@ -1,4 +1,7 @@
 {
+  // קובץ הגג: לא בודק קבצים בעצמו, רק מפנה לשני החלקים.
+  // tsconfig.app.json: קוד האפליקציה (src), שרץ בדפדפן.
+  // tsconfig.node.json: קובץ ההגדרות vite.config.ts, שרץ ב-Node.
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
