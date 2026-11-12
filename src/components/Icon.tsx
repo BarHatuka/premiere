@@ -32,10 +32,10 @@ const SHAPES = {
   heart: <path d="M12 19.5s-7.5-4.6-7.5-10.2A4.1 4.1 0 0 1 12 7a4.1 4.1 0 0 1 7.5 2.3c0 5.6-7.5 10.2-7.5 10.2z" />,
   // כוכב
   star: <path d="m12 3.8 2.5 5.2 5.7.8-4.1 4 1 5.6L12 16.7l-5.1 2.7 1-5.6-4.1-4 5.7-.8z" />,
-  // satisfies: TypeScript בודק שכל ערך הוא ReactNode, אבל זוכר את השמות המדויקים
+  // satisfies: TypeScript בודק שכל אייקון הוא משהו ש-React יודע לצייר (ReactNode), וגם זוכר את השמות של האייקונים
 } satisfies Record<string, ReactNode>
 
-// keyof typeof: טיפוס שהוא אחד משמות האייקונים ('search' | 'close' | ...). שם אחר לא יעבור קומפילציה
+// keyof typeof SHAPES: רק אחד מהשמות שברשימה למעלה ('search', 'close' וכו'). שם אחר נותן שגיאה ב-build
 export type IconName = keyof typeof SHAPES
 
 // ה-props של האייקון

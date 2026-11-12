@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────
 // הודעת טעינה או הודעת שגיאה, משותפת לכל העמודים שטוענים מידע.
 // משתמשים בו ב: HomePage, ‏ShowPage, ‏TodayPage.
-// אם המרצה שואל "מה זה ה-type ב-props?": union type. אם type הוא 'error', ‏TypeScript מחייב להעביר גם title, ‏details ו-onRetry.
+// ה-type ב-props קובע איזו הודעה זו (union type). אם type הוא 'error', ‏TypeScript מחייב להעביר גם title, ‏details ו-onRetry.
 // ─────────────────────────────────────────────
 
 // העיצוב של ההודעות
